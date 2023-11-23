@@ -10,3 +10,7 @@ if __name__ == '__main__':
     minuscules(input_file_path)
     # See PyCharm help at https://www.jetbrains.com/help/pycharm/
     #autre Test
+
+
+
+

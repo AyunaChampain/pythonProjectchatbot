@@ -26,4 +26,3 @@ for nom in noms_prsdt:
         cptsarkozy = 1
     elif nom == 'Giscard dEstaing' and cptgiscard == 0 :
         print(nom, end=" ")
-        cptgiscard = 1
