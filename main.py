@@ -4,7 +4,7 @@ from Minuscules import *
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 if __name__ == '__main__':
 
-    input_file_path = "Nomination_Macron.txt"
+    input_file_path = "speeches/Nomination_Macron.txt"
     output_file_path = "converted_output.txt"
 
     minuscules(input_file_path)

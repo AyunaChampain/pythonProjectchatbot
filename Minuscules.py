@@ -11,6 +11,6 @@ def minuscules(file) :
                     new_line += chr(ord(cara) + 32)
                 else :
                     new_line += cara
-            with open("file.txt", "a") as f2 :
+            with open("cleaned/file.txt", "a") as f2 :
                 f2.write(new_line)
 
