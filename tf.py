@@ -11,23 +11,21 @@ def list_of_files(directory, extension):
 
 
 def tf (repert) :
-    dico = {}
-    M = []
+    L = []
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :
-        L = []
         with open("./cleaned/" + list[i], "r") as f :
             Lignes = f.readlines()
-    for discours in Lignes:
-        #creer un dictionnaire vide
-        tf={}
-        #séparer chaque mot du texte
-        mots=discours.split()
-        #ajouter dans le dictionnaire les mots s'il ne le sont pas déjà et indiquer leur occurence
-        for mot in mots:
-            if mot not in tf:
-                tf[mot]=1
-            else:
-                tf[mot] = tf[mot] + 1
-        print(tf)
-
+                #creer un dictionnaire vide
+            tf={}
+            for l in Lignes:
+                #séparer chaque mot du texte
+                mots = l.split()
+                #ajouter dans le dictionnaire les mots s'ils ne le sont pas déjà et indiquer leur occurence
+                for mot in mots:
+                    if mot not in tf:
+                        tf[mot]=1
+                    else:
+                        tf[mot] = tf[mot] + 1
+            L.append(tf)
+    return L
