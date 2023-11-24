@@ -16,8 +16,4 @@ def TFIDF (reper) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
-        print(M)
-
-
-
-TFIDF("./cleaned")
+    return M
