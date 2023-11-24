@@ -24,5 +24,3 @@ def noms() :
                 nom += nom_f[lettre]
         noms_prsdt.append(nom)
     print(noms_prsdt)
-
-noms()

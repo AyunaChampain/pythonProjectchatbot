@@ -1,16 +1,21 @@
 # This is a sample Python script.
-
+from Minuscules import *
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    input_file_path = "speeches/Nomination_Macron.txt"
+    output_file_path = "converted_output.txt"
+
+    minuscules(input_file_path)
+    # See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    #autre Test
+
+#question 3
+#à mettre dans main
+# motplusgrandtfidf = chiracrepet(tfidf, listemots)
+
+#question 4
+# à mettre dans main
+# lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
+
