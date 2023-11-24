@@ -13,16 +13,11 @@ def IDF (repert) :
             Lignes = f.readlines()
         for l in Lignes :
             mot = ""
-            for lettre in l :
-                if lettre == " " :
-                    if mot not in L :
-                        L.append(mot)
-                    mot = ""
-                else :
-                    mot += lettre
-        if mot not in L :
-            L.append(mot)
-        M.append(L)
+            mots = l.split()
+            for i in mots :
+                L = []
+                L.append (i)
+                M.append(L)
     dico = {}
     for i in M :
         for mot in i :
@@ -33,3 +28,4 @@ def IDF (repert) :
     for i in dico.keys() :
         dico[i] = log10(1 + (len(list)/dico[i]))
     return dico
+IDF("./cleaned")

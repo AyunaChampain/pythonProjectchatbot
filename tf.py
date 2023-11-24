@@ -23,7 +23,7 @@ def tf (repert) :
                 mots = l.split()
                 #ajouter dans le dictionnaire les mots s'ils ne le sont pas déjà et indiquer leur occurence
                 for mot in mots:
-                    if mot not in tf:
+                    if mot not in tf and mot != " " and mot != "" :
                         tf[mot]=1
                     else:
                         tf[mot] = tf[mot] + 1
