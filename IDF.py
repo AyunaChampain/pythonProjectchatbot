@@ -37,6 +37,6 @@ def IDF (repert) :
             else :
                 dico[mot] = dico[mot] + 1
     for i in dico.keys() :
-        dico[i] = log(len(list)/dico[i])
+        dico[i] = log(1 + (len(list)/dico[i]))
     print(dico)
 IDF("./speeches")
