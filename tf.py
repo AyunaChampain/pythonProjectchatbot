@@ -31,4 +31,3 @@ def tf (repert) :
                 tf[mot] = tf[mot] + 1
         print(tf)
 
-tf("./cleaned")

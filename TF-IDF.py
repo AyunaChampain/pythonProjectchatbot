@@ -9,7 +9,11 @@ def TFIDF (reper) :
         L = []
         L.append(mot)
         M.append(L)
-    print (M)
+    """for j in range(len(TF)) :
+            for i in range(len[M]) :
+                M[i] = TF[j] * idf[i]
+        print(M)"""
+
 
 
 TFIDF("./cleaned")
