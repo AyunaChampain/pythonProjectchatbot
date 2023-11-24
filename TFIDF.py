@@ -4,14 +4,11 @@ def TFIDF (reper) :
     M = []
     TF = tf(reper)
     idf = IDF(reper)
-    print(TF)
-    print(idf)
     for mot in idf.keys() :
         L = []
         if mot != "" :
             L.append(mot)
             M.append(L)
-    print(M)
     for j in range(len(TF)) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
