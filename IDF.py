@@ -15,7 +15,7 @@ def IDF (repert) :
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :
         L = []
-        with open("./speeches/" + list[i], "r") as f :
+        with open("./cleaned/" + list[i], "r") as f :
             Lignes = f.readlines()
         for l in Lignes :
             mot = ""
@@ -37,6 +37,6 @@ def IDF (repert) :
             else :
                 dico[mot] = dico[mot] + 1
     for i in dico.keys() :
-        dico[i] = log(1 + (len(list)/dico[i]))
+        dico[i] = log10(1 + (len(list)/dico[i]))
     print(dico)
-IDF("./speeches")
+IDF("./cleaned")
