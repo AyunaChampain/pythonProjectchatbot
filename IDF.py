@@ -1,12 +1,6 @@
 from math import *
 from os import listdir
-
-def list_of_files(directory, extension):
-    files_names = []
-    for filename in listdir(directory):
-        if filename.endswith(extension):
-            files_names.append(filename)
-    return files_names
+from extrairenoms import *
 
 
 def IDF (repert) :
@@ -38,5 +32,4 @@ def IDF (repert) :
                 dico[mot] = dico[mot] + 1
     for i in dico.keys() :
         dico[i] = log10(1 + (len(list)/dico[i]))
-    print(dico)
-IDF("./cleaned")
+    return dico
