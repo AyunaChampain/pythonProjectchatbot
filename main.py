@@ -11,6 +11,11 @@ if __name__ == '__main__':
     # See PyCharm help at https://www.jetbrains.com/help/pycharm/
     #autre Test
 
+#question 3
+#à mettre dans main
+# motplusgrandtfidf = chiracrepet(tfidf, listemots)
 
-
+#question 4
+# à mettre dans main
+# lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
 
