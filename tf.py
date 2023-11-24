@@ -15,6 +15,7 @@ def tf (repert) :
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :
         with open("./cleaned/" + list[i], "r") as f :
+            #lire chaque discours séparément
             Lignes = f.readlines()
                 #creer un dictionnaire vide
             tf={}
