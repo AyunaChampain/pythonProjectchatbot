@@ -1,4 +1,4 @@
-from TFIDF import *
+from Functions import *
 
 TfIdf = TFIDF("./cleaned")
 min = 0

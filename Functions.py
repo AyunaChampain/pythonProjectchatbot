@@ -1,6 +1,5 @@
 from math import *
 from os import listdir
-from extrairenoms import *
 
 
 #Fonction permettant de lire les noms des différents fichiers
