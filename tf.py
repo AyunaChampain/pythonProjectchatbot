@@ -1,14 +1,7 @@
 
 from math import *
 from os import listdir
-
-def list_of_files(directory, extension):
-    files_names = []
-    for filename in listdir(directory):
-        if filename.endswith(extension):
-            files_names.append(filename)
-    return files_names
-
+from extrairenoms import *
 
 def tf (repert) :
     L = []

@@ -1,21 +1,31 @@
-# This is a sample Python script.
-from Minuscules import *
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 if __name__ == '__main__':
 
-    input_file_path = "speeches/Nomination_Macron.txt"
-    output_file_path = "converted_output.txt"
+    print("Bonjour, bienvenue sur le ChatBot")
+    print("Que souhaitez vous faire ? ")
+    print("Tapez :")
+    print("1 pour obtenir la liste des mots les moins importants.")
+    print("2 pour les mots dont le score TD-IDF les plus élevés.")
+    print("3 pour les mots les plus répétés par le président Chirac.")
+    print("4 pour obtenir la liste des noms des présidents ayant parlé de Nation et celui qui a répété le plus de fois le mot Nation.")
+    print("5 pour obtenir le nom du premier président à parler d'écologie.")
+    print("6 pour obtenir les mots que tous les présidents ont prononcé.")
+    print("7 pour fermer le programme.")
+    choix = 0
+    while choix < 1 or choix > 5 :
+        choix = int(input("Choisissez une commande : "))
+    print("")
 
-    minuscules(input_file_path)
-    # See PyCharm help at https://www.jetbrains.com/help/pycharm/
-    #autre Test
-
-#question 3
-#à mettre dans main
-# motplusgrandtfidf = chiracrepet(tfidf, listemots)
-
-#question 4
-# à mettre dans main
-# lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
+    
+    if choix == 1 :
+        from TFIDFlow import *
+    if choix == 2 :
+        from tfidfelevé import *
+    if choix == 3 :
+        from chiracmot import *
+    if choix == 4 :
+        from findpresidentnation import *
+    if choix == 5 :
+        print("Oui")
+    if choix == 6 :
+        print("Oui")
 

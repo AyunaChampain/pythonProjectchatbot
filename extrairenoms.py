@@ -1,6 +1,5 @@
 import os
 
-
 #Fonction qui extrait le nom des fichiers
 def list_of_files(directory, extension):
     files_names = []

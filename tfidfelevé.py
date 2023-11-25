@@ -10,3 +10,7 @@ def tfidf_eleve(tfidf, listemots):
         #parcourir colone de la matrice
         for j in range(len(tfidf[i])):
             if tfidf[i][j] > maxi_tfidf2:
+                maxi_tfidf2 = tfidf[i][j]
+    return tfidf
+
+#?

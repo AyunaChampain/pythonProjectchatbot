@@ -21,4 +21,3 @@ def minuscules(repert) :
                 with open("cleaned/" + list[i], "a") as f2 :
                     f2.write(new_line)
 
-minuscules("./speeches")
