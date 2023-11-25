@@ -12,7 +12,6 @@ if __name__ == '__main__':
     print("4 pour obtenir la liste des noms des présidents ayant parlé de Nation et celui qui a répété le plus de fois le mot Nation.")
     print("5 pour obtenir le nom du premier président à parler d'écologie.")
     print("6 pour obtenir les mots que tous les présidents ont prononcé.")
-    print("7 pour fermer le programme.")
     choix = 0
     while choix < 1 or choix > 5 :
         choix = int(input("Choisissez une commande : "))
