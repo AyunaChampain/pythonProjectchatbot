@@ -1,3 +1,6 @@
+from functions import *
+
+
 if __name__ == '__main__':
 
     print("Bonjour, bienvenue sur le ChatBot")
@@ -15,7 +18,7 @@ if __name__ == '__main__':
         choix = int(input("Choisissez une commande : "))
     print("")
 
-    
+
     if choix == 1 :
         from TFIDFlow import *
     if choix == 2 :
