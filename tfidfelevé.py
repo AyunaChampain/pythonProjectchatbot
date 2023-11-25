@@ -12,3 +12,5 @@ def tfidf_eleve(tfidf, listemots):
             if tfidf[i][j] > maxi_tfidf2:
                 maxi_tfidf2 = tfidf[i][j]
     return tfidf
+
+#?

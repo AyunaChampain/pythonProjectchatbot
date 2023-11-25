@@ -11,5 +11,5 @@ def chiracrepet(tfidf, listemots):
                 lemotenquestion= listemots[i]
     return lemotenquestion
 
-#à mettre dans main
+#chiracrepet()
 # motplusgrandtfidf = chiracrepet(tfidf, listemots)
