@@ -19,4 +19,3 @@ def ponctuation(reper):
             with open("./cleaned/" + list[i], "w") as f4 :
                 f4.write(new_line2)
 
-ponctuation("./cleaned")
