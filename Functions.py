@@ -1,0 +1,154 @@
+from math import *
+from os import listdir
+from extrairenoms import *
+
+def list_of_files(directory, extension):
+    files_names = []
+    for filename in listdir(directory):
+        if filename.endswith(extension):
+            files_names.append(filename)
+    return files_names
+
+
+def nompresident(noms_prsdt):
+    #cpt pour n'afficher que la première occurence
+    cpthollande = 0
+    cptchirac = 0
+    cptgiscard = 0
+    cptmacron = 0
+    cptsarkozy = 0
+    cptmitterrand = 0
+    for nom in noms_prsdt:
+        if nom == 'Chirac' and cptchirac == 0 :
+            return(nom)
+            cptchirac = 1
+        elif nom == 'Mitterrand' and cptmitterrand == 0 :
+            return(nom)
+            cptmitterrand = 1
+        elif nom == 'Hollande' and cpthollande == 0 :
+            return(nom)
+            cpthollande = 1
+        elif nom == 'Macron' and cptmacron == 0 :
+            return(nom)
+            cptmacron = 1
+        elif nom == 'Sarkozy' and cptsarkozy == 0 :
+            return(nom)
+            cptsarkozy = 1
+        elif nom == 'Giscard dEstaing' and cptgiscard == 0 :
+            return(nom)
+            cptgidcard = 1
+
+def noms() :
+    directory = "./speeches"
+    files_names = list_of_files(directory, "txt")
+
+    noms_prsdt = []
+    for nom_f in files_names : #nom_f = noms fichiers
+        nom = ""
+        for lettre in range (11, len(nom_f)-4): #Parcours chaque lettre du nom hors "Noination_" et l'extension
+            if ord(nom_f[lettre]) <= 48 or ord(nom_f[lettre]) >= 57 : #verifie que le charactère n'est pas un chiffre
+                nom += nom_f[lettre]
+        noms_prsdt.append(nom)
+    print(noms_prsdt)
+
+def minuscules(repert) :
+    list = list_of_files(repert, "txt")
+    for i in range (len(list)) :
+        with open("./speeches/" + list[i], 'r') as f :
+            contenu = f.readlines()
+            for line in contenu :
+                new_line = ""
+                for cara in line :
+                    if ord(cara) >= 65 and ord(cara) <= 90 :
+                        new_line += chr(ord(cara) + 32)
+                    else :
+                        new_line += cara
+                with open("cleaned/" + list[i], "a") as f2 :
+                    f2.write(new_line)
+
+def ponctuation(reper):
+    dico = {}
+    M = []
+    list = list_of_files(reper, "txt")
+    for i in range(len(list)):
+        new_line2 = ""
+        with open("./cleaned/" + list[i], 'r') as f3:
+            contenu2 = f3.readlines()
+            for lines in contenu2 :
+                for cara2 in lines :
+                    if (ord(cara2) >= 33 and ord(cara2) <= 38) or (ord(cara2) >= 40 and ord(cara2) <= 44) or (ord(cara2) >= 46 and ord(cara2) <= 47) or (ord(cara2) >= 58 and ord(cara2) <= 63) or (ord(cara2) >= 91 and ord(cara2) <= 96) or (ord(cara2) >= 123 and ord(cara2) <= 126):
+                        new_line2 += " "
+                    elif (ord(cara2) == 39) or (ord(cara2) == 45):
+                        new_line2 += " "
+                    else:
+                        new_line2 += cara2
+            with open("./cleaned/" + list[i], "w") as f4 :
+                f4.write(new_line2)
+
+def tf (repert) :
+    L = []
+    list = list_of_files(repert, "txt")
+    for i in range (len(list)) :
+        with open("./cleaned/" + list[i], "r") as f :
+            #lire chaque discours séparément
+            Lignes = f.readlines()
+                #creer un dictionnaire vide
+            tf={}
+            for l in Lignes:
+                #séparer chaque mot du texte
+                mots = l.split()
+                #ajouter dans le dictionnaire les mots s'ils ne le sont pas déjà et indiquer leur occurence
+                for mot in mots:
+                    if mot not in tf and mot != " " and mot != "" :
+                        tf[mot]=1
+                    else:
+                        tf[mot] = tf[mot] + 1
+            L.append(tf)
+    return L
+
+
+
+
+
+def IDF (repert) :
+    dico = {}
+    M = []
+    list = list_of_files(repert, "txt")
+    for i in range (len(list)) :
+        L = []
+        with open("./cleaned/" + list[i], "r") as f :
+            Lignes = f.readlines()
+        for l in Lignes :
+            mot = ""
+            mots = l.split()
+            for i in mots :
+                L = []
+                L.append (i)
+                M.append(L)
+    dico = {}
+    for i in M :
+        for mot in i :
+            if mot not in dico.keys() :
+                dico[mot] = 1
+            else :
+                dico[mot] = dico[mot] + 1
+    for i in dico.keys() :
+        dico[i] = log10(1 + (len(list)/dico[i]))
+    return dico
+
+def TFIDF (reper) :
+    M = []
+    TF = tf(reper)
+    idf = IDF(reper)
+    for mot in idf.keys() :
+        L = []
+        if mot != "" :
+            L.append(mot)
+            M.append(L)
+    for j in range(len(TF)) :
+        for i in range(len(M)) :
+            if M[i][0] in TF[j].keys() :
+                M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
+    return M
+
+
