@@ -1,6 +1,11 @@
+
+"""from Functions import *
+tfidf = TfIdf()
+listemots = ?"""
+
 def chiracrepet(tfidf, listemots):
     max_tfidf = 0
-    lemotenquestion =""
+    mot =""
     #parcourir la ligne de la matrice
     for i in range(len(tfidf)):
         #parcourir colone de la matrice
@@ -8,8 +13,8 @@ def chiracrepet(tfidf, listemots):
             ## Vérifier si le score tf idf est plus grand que le maximum actuel
             if tfidf[i][j] > max_tfidf:
                 max_tfidf = tfidf[i][j]
-                lemotenquestion= listemots[i]
-    return lemotenquestion
+                mot = listemots[i]
+    return mot
 
-#à mettre dans main
+#chiracrepet()
 # motplusgrandtfidf = chiracrepet(tfidf, listemots)
