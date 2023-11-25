@@ -2,6 +2,9 @@ from math import *
 from os import listdir
 from extrairenoms import *
 
+
+#Fonction permettant de lire les noms des différents fichiers
+#contenus dans un répertoire
 def list_of_files(directory, extension):
     files_names = []
     for filename in listdir(directory):
@@ -9,7 +12,7 @@ def list_of_files(directory, extension):
             files_names.append(filename)
     return files_names
 
-
+#Fonction associant un prénom à chaque président
 def nompresident(noms_prsdt):
     #cpt pour n'afficher que la première occurence
     cpthollande = 0
@@ -38,6 +41,8 @@ def nompresident(noms_prsdt):
             return(nom)
             cptgidcard = 1
 
+
+#Fonction isolant le nom du président du nom du fichier
 def noms() :
     directory = "./speeches"
     files_names = list_of_files(directory, "txt")
@@ -51,6 +56,8 @@ def noms() :
         noms_prsdt.append(nom)
     print(noms_prsdt)
 
+
+#Permet de transformer tous le contenu des fichiers en minuscules
 def minuscules(repert) :
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :
@@ -66,6 +73,8 @@ def minuscules(repert) :
                 with open("cleaned/" + list[i], "a") as f2 :
                     f2.write(new_line)
 
+
+#Retire la ponctiation et tout caractère spécial des textes
 def ponctuation(reper):
     dico = {}
     M = []
@@ -85,6 +94,8 @@ def ponctuation(reper):
             with open("./cleaned/" + list[i], "w") as f4 :
                 f4.write(new_line2)
 
+
+#Calcule le tf
 def tf (repert) :
     L = []
     list = list_of_files(repert, "txt")
@@ -107,9 +118,7 @@ def tf (repert) :
     return L
 
 
-
-
-
+#Calcule l'IDF
 def IDF (repert) :
     dico = {}
     M = []
@@ -136,6 +145,8 @@ def IDF (repert) :
         dico[i] = log10(1 + (len(list)/dico[i]))
     return dico
 
+
+#Calcule le score TF-IDF
 def TFIDF (reper) :
     M = []
     TF = tf(reper)
@@ -150,5 +161,3 @@ def TFIDF (reper) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
     return M
-
-
