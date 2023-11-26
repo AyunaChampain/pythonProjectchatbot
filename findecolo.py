@@ -22,7 +22,6 @@ for discours in M :
             else :
                 compt += 1
     L.append(rang)
-print(L)
 
 min = L[0]
 liste = []
@@ -34,9 +33,8 @@ for rang in range (len(L)) :
         min = L[rang + 1]
 
 L = noms()
-print(liste)
-print(L)
 print("Les président à parler d'écologie sont : ", end = "")
 for i in liste :
-    print(L[i])
+    print(L[i], end = " ")
+print("")
 print("Le premier président à en parler est : ", L[premier])
