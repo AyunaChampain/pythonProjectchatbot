@@ -3,7 +3,7 @@ from Functions import *
 def findpresident(tfidf,listemots,listedoc):
     #trouver l'index du mot
 
-    index_mot = listemots.index("Nation")
+    index_mot = listemots["nation"]
 
     max_score = 0
     max_index = 0
@@ -27,6 +27,6 @@ def findpresident(tfidf,listemots,listedoc):
 tfidf = TFIDF("./cleaned")
 listemots = ""
 listedoc = ""
-print(findpresdent(tfidf, listemots, listedoc))
+print(findpresident(tfidf, listemots, listedoc))
 # à mettre dans main
 # lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
