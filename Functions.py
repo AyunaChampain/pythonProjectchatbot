@@ -55,7 +55,7 @@ def noms() :
             if ord(nom_f[lettre]) <= 48 or ord(nom_f[lettre]) >= 57 : #verifie que le charactère n'est pas un chiffre
                 nom += nom_f[lettre]
         noms_prsdt.append(nom)
-    print(noms_prsdt)
+    return noms_prsdt
 
 
 #Permet de transformer tous le contenu des fichiers en minuscules
