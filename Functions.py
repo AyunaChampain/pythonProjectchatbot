@@ -81,7 +81,7 @@ def minuscules(repert) :
                     f2.write(new_line)
 
 
-#Retire la ponctiation et tout caractère spécial des textes
+#Retire la ponctuation et tout caractère spécial des textes
 def ponctuation(reper):
     dico = {}
     M = []
