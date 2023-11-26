@@ -47,4 +47,3 @@ print("")
 print("Le premier président à en parler est : ", L[premier])
 
 
-print("le mot est")
