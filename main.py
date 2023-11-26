@@ -29,5 +29,5 @@ if __name__ == '__main__':
     if choix == 5 :
         from findecolo import *
     if choix == 6 :
-        print("Oui")
+        from find_commun import *
 
