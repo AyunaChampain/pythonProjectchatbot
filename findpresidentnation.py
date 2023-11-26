@@ -27,6 +27,6 @@ def findpresident(tfidf,listemots,listedoc):
 tfidf = TFIDF("./cleaned")
 listemots = ""
 listedoc = ""
-findpresdent(tfidf, listemots, listedoc)
+print(findpresdent(tfidf, listemots, listedoc))
 # à mettre dans main
 # lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
