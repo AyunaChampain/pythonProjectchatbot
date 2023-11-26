@@ -1,4 +1,4 @@
-from tf import *
+from Functions import *
 
 def listemots(tf):
     a=[]
@@ -10,8 +10,8 @@ def listemots(tf):
 var = tf("./cleaned")
 listemots(var)
 
-from extrairenoms import *
+"""from extrairenoms import *
 def oups(b):
     print(b)
 b= nom("./cleaned")
-oups(b)
+oups(b)"""

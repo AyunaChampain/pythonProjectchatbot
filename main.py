@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if choix == 4 :
         from findpresidentnation import *
     if choix == 5 :
-        print("Oui")
+        from findecolo import *
     if choix == 6 :
         print("Oui")
 
