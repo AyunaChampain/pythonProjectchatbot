@@ -161,7 +161,7 @@ def TFIDF (reper) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
-    return
+    return M
 
 # Créé une liste qui contient tous les mots
 def listemots(tf):
