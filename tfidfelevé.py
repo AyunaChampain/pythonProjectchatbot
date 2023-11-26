@@ -11,10 +11,10 @@ def tfidf_eleve(tfidf):
         for j in range(1, len(tfidf[i])):
             #Comparer le maximum à la valeur
             if tfidf[i][j] > maxi_tfidf:
-                maxi_tfidf2= tfidf[i][j]
+                maxi_tfidf = tfidf[i][j]
                 mot = tfidf[i][0]
     return mot
 
 
 tfidf = TFIDF("./cleaned")
-print(tfidf_eleve(tfidf))
+print("Le mot ayant le tf-idf le plus élevé est : ", tfidf_eleve(tfidf))
