@@ -10,15 +10,12 @@ def commun(M):
         if mot_present:
             mots_communs.append(i)
     return mots_communs
-#commencer par 1 et 1 dans colonne et ligne
-#dans chaque ligne verifier si tout les tf sont au dessus de 0 si oui les mettre dans une liste
-mots_communs = []
-for i in range(1, len(M)):
-    mot_present = True
-    for j in range(1, len(M[i])):
-        if M[i][j] <= 0:
-            mot_present = False
-            break
-    if mot_present:
-        mots_communs.append(i)
-print(f"Les mots qui sont dans chaque fichier sont: {mots_communs}")
+# Trouver le président qui a utilisé le mot le plus
+presidents = {}
+for mot in mots_communs:
+    max_tfidf = 0
+    for i in range(len(M)):
+        if M[i][mot] > max_tfidf:
+            max_president = i
+            max_tfidf = M[i][mot]
+    presidents[mot] = max_president
