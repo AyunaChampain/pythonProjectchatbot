@@ -1,7 +1,6 @@
 from Functions import *
 
 TfIdf = TFIDF("./cleaned")
-min = 0
 mot = []
 
 #Parcours la matrice TfIdf
@@ -12,9 +11,8 @@ for i in range(len(TfIdf)) :
     for j in range(1,len(TfIdf[i])) :
         s += TfIdf[i][j]
     s /= len(TfIdf[i])
-    #Garde les mots dont le score est inférieur à 0.35
-    if s <= 0.35 :
-        min = s
+    #Garde les mots dont le score est inférieur à 0.38
+    if s <= 0.38 :
         mot.append(TfIdf[i][0])
 
 
