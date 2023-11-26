@@ -9,7 +9,8 @@ for a in range (len(tf)):
                 if tf[a][cle] > clemax:
                     clemax = tf[a][cle]
                     motmax = cle
-print(motmax)
+
+print('Le mot le plus répété par le président Chirac est :',motmax)
 
 
 
