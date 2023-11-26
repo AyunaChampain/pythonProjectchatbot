@@ -1,16 +1,3 @@
-def commun(M):
-    # Trouver les mots que tous les présidents ont utilisés
-    mots_communs = []
-    for i in range(len(matrice[0])):
-        mot_present = True
-        for j in range(1, len(matrice)):
-            if matrice[j][i] == 0:
-                mot_present = False
-                break
-        if mot_present:
-            mots_communs.append(i)
-    return mots_communs
-
 from Functions import *
 tf = tf("./cleaned")
 TfIdf = TFIDF("./cleaned")
