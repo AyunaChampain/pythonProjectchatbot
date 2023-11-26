@@ -11,8 +11,9 @@ def list_of_files(directory, extension):
             files_names.append(filename)
     return files_names
 
-#Fonction associant un prénom à chaque président
+#Fonction affichant la liste des présidents
 def nompresident(noms_prsdt):
+    Listepres=[]
     #cpt pour n'afficher que la première occurence
     cpthollande = 0
     cptchirac = 0
@@ -22,23 +23,30 @@ def nompresident(noms_prsdt):
     cptmitterrand = 0
     for nom in noms_prsdt:
         if nom == 'Chirac' and cptchirac == 0 :
-            return(nom)
+            return(nom, end= " ")
+            Listepres.append(nom)
             cptchirac = 1
         elif nom == 'Mitterrand' and cptmitterrand == 0 :
-            return(nom)
+            return(nom, end=" ")
+            Listepres.append(nom)
             cptmitterrand = 1
         elif nom == 'Hollande' and cpthollande == 0 :
-            return(nom)
+            return(nom, end=" ")
+            Listepres.append(nom)
             cpthollande = 1
         elif nom == 'Macron' and cptmacron == 0 :
-            return(nom)
+            return(nom, end=" ")
+            Listepres.append(nom)
             cptmacron = 1
         elif nom == 'Sarkozy' and cptsarkozy == 0 :
-            return(nom)
+            return(nom, end=" ")
+            Listepres.append(nom)
             cptsarkozy = 1
         elif nom == 'Giscard dEstaing' and cptgiscard == 0 :
-            return(nom)
+            return(nom, end=" ")
+            Listepres.append(nom)
             cptgidcard = 1
+    return Listepres
 
 
 #Fonction isolant le nom du président du nom du fichier
@@ -159,4 +167,15 @@ def TFIDF (reper) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
-    return M
+    return
+
+# Créé une liste qui contient tous les mots
+def listemots(tf):
+    a=[]
+    for i in tf:
+        for cle in i.keys():
+            a.append(cle)
+    print(a)
+
+var = tf("./cleaned")
+listemots(var)
