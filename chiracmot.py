@@ -1,8 +1,4 @@
-
-"""from Functions import *
-tfidf = TfIdf()
-listemots = ?"""
-
+from Functions import *
 def chiracrepet(tfidf, listemots):
     max_tfidf = 0
     mot =""
@@ -16,5 +12,7 @@ def chiracrepet(tfidf, listemots):
                 mot = listemots[i]
     return mot
 
-#chiracrepet()
-# motplusgrandtfidf = chiracrepet(tfidf, listemots)
+
+tfidf = TFIDF("./cleaned")
+listemots = ""
+print(chiracrepet(tfidf, listemots))
