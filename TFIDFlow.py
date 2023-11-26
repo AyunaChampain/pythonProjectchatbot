@@ -12,4 +12,4 @@ for i in range(len(TfIdf)) :
     if s <= 0.35 :
         min = s
         mot.append(TfIdf[i][0])
-print(mot)
+print("Les mots les moins importants (ayant le score TF-IDF le plus bas) sont : ",mot)

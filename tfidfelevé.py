@@ -17,4 +17,4 @@ def tfidf_eleve(tfidf):
 
 
 tfidf = TFIDF("./cleaned")
-print(tfidf_eleve(tfidf))
+print("Le mot ayant le score Tf-Idf le plus élevé est : ", tfidf_eleve(tfidf))
