@@ -171,5 +171,3 @@ def listemots(tf):
             a.append(cle)
     print(a)
 
-"""var = tf("./cleaned")
-listemots(var)"""
