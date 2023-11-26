@@ -13,5 +13,5 @@ def ecologie_climat(mots, liste_files):
         if texte[i] in mots: #vérifie si le mot et un des deux mots cherché
             index = i
             liste_index = liste_index.append(i) #ajoute à une liste a quelle indexe un des mots et apparus
-            indices_president[filenoms] = index
+            indices_president[filenoms] = index #ajoute et associe à un dico le nom du P et l'indice de la prononciation
             break #??
