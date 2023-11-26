@@ -1,18 +1,15 @@
 from Functions import *
-tfidf = TFIDF("./cleaned")
-max_tfidf = 1
-mot =""
-#parcourir la ligne de la matrice
-for i in range(len(tfidf)):
-    #parcourir colone de la matrice
-    for j in range(1,2):
-        ## Vérifier si le score tf idf est plus petit que le maximum actuel
-        if tfidf[i][j] < max_tfidf:
-            max_tfidf = tfidf[i][j]
-            mot =tfidf [i][0]
-print(mot)
+tf = tf("./cleaned")
+
+clemax = 0
+motmax = ''
+for a in range (len(tf)):
+    if tf[a] == tf[0] or tf[a] == tf[1]:
+        for cle in tf[a].keys():
+                if tf[a][cle] > clemax:
+                    clemax = tf[a][cle]
+                    motmax = cle
+print(motmax)
 
 
-"""tfidf = TFIDF("./cleaned")
-listemots = ""
-print(chiracrepet(tfidf, listemots))"""
+
