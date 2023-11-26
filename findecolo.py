@@ -1,6 +1,8 @@
 from Functions import *
 M = []
 repert = "./cleaned"
+
+#Récupère les noms des fichiers et sépare les mots en listes
 list = list_of_files(repert, "txt")
 for i in range (len(list)) :
     L = []
@@ -12,17 +14,22 @@ for i in range (len(list)) :
     M.append(L)
 
 L = []
+
+#Parcours les mots
 for discours in M :
     compt = 0
     rang = 0
     for ligne in range(len(discours)) :
         for mot in discours[ligne] :
+            #Vérifie si le mot évoque l'écologie
             if mot == "écologie" or mot == "climat" or mot == "écologique" or mot == "climatique" :
+                #Compte à quel rang dans le discours le mot a été prononcé
                 rang = compt
             else :
                 compt += 1
     L.append(rang)
 
+#Retrouve le président qui a pononcé le mot le plus tôt
 min = L[0]
 liste = []
 for rang in range (len(L)) :
