@@ -1,3 +1,5 @@
+from Functions import *
+
 def findpresident(tfidf,listemots,listedoc):
     #trouver l'index du mot
 
@@ -21,5 +23,10 @@ def findpresident(tfidf,listemots,listedoc):
 
     return presidents, president_final
 
+
+tfidf = TFIDF("./cleaned")
+listemots = ""
+listedoc = ""
+print(findpresdent(tfidf, listemots, listedoc))
 # à mettre dans main
 # lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
