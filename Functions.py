@@ -21,9 +21,11 @@ def nompresident(noms_prsdt):
     cptmacron = 0
     cptsarkozy = 0
     cptmitterrand = 0
+    #Ajoute les noms dans la liste pour qu'elle soit envoyée plus tard
     for nom in noms_prsdt:
         if nom == 'Chirac' and cptchirac == 0 :
             Listepres.append(nom)
+            #Lorsque le nom est ajouté une première fois dans la liste, cpt ne prend plus la valeur de 0
             cptchirac = 1
         elif nom == 'Mitterrand' and cptmitterrand == 0 :
             Listepres.append(nom)
@@ -40,7 +42,7 @@ def nompresident(noms_prsdt):
         elif nom == 'Giscard dEstaing' and cptgiscard == 0 :
             Listepres.append(nom)
             cptgidcard = 1
-    return(Listepres)
+    return Listepres
 
 
 #Fonction isolant le nom du président du nom du fichier
@@ -102,19 +104,21 @@ def tf (repert) :
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :
         with open("./cleaned/" + list[i], "r") as f :
-            #lire chaque discours séparément
+            #lit chaque discours séparément
             Lignes = f.readlines()
-                #creer un dictionnaire vide
+                #crée un dictionnaire vide
             tf={}
             for l in Lignes:
-                #séparer chaque mot du texte
+                #sépare chaque mot du texte
                 mots = l.split()
-                #ajouter dans le dictionnaire les mots s'ils ne le sont pas déjà et indiquer leur occurence
+                #ajouter dans le dictionnaire les mots s'ils ne le sont pas déjà
                 for mot in mots:
                     if mot not in tf and mot != " " and mot != "" :
                         tf[mot]=1
+                    # incrémente la valeur dans le dictionnaire à chaque fois que le mot réapparaît
                     else:
                         tf[mot] = tf[mot] + 1
+            #ajoute le dictionnaire dans la liste
             L.append(tf)
     return L
 
@@ -162,12 +166,4 @@ def TFIDF (reper) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
     return M
-
-# Créé une liste qui contient tous les mots
-def listemots(tf):
-    a=[]
-    for i in tf:
-        for cle in i.keys():
-            a.append(cle)
-    print(a)
 
