@@ -23,27 +23,27 @@ def nompresident(noms_prsdt):
     cptmitterrand = 0
     for nom in noms_prsdt:
         if nom == 'Chirac' and cptchirac == 0 :
-            return(nom, end= " ")
+            return(nom)
             Listepres.append(nom)
             cptchirac = 1
         elif nom == 'Mitterrand' and cptmitterrand == 0 :
-            return(nom, end=" ")
+            return(nom)
             Listepres.append(nom)
             cptmitterrand = 1
         elif nom == 'Hollande' and cpthollande == 0 :
-            return(nom, end=" ")
+            return(nom)
             Listepres.append(nom)
             cpthollande = 1
         elif nom == 'Macron' and cptmacron == 0 :
-            return(nom, end=" ")
+            return(nom)
             Listepres.append(nom)
             cptmacron = 1
         elif nom == 'Sarkozy' and cptsarkozy == 0 :
-            return(nom, end=" ")
+            return(nom)
             Listepres.append(nom)
             cptsarkozy = 1
         elif nom == 'Giscard dEstaing' and cptgiscard == 0 :
-            return(nom, end=" ")
+            return(nom)
             Listepres.append(nom)
             cptgidcard = 1
     return Listepres
@@ -167,7 +167,7 @@ def TFIDF (reper) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
-    return
+    return M
 
 # Créé une liste qui contient tous les mots
 def listemots(tf):
