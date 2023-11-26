@@ -1,32 +1,42 @@
 from Functions import *
+M = []
+repert = "./cleaned"
+list = list_of_files(repert, "txt")
+for i in range (len(list)) :
+    L = []
+    with open("./cleaned/" + list[i], 'r') as f :
+        contenu = f.readlines()
+        for l in contenu:
+            mots = l.split()
+            L.append(mots)
+    M.append(L)
 
-def findpresident(tfidf,listemots,listedoc):
-    #trouver l'index du mot
-
-    index_mot = listemots["nation"]
-
-    max_score = 0
-    max_index = 0
-    #liste pour stocker tous les présidents qui ont parlé de Nation
-    presidents=[]
-
-    #parcourir les documents à l'index du mot nation
-    for i in range(len(tfidf[index_mot])):
-            if tfidf[index_mot][i] > 0:
-                presidents.append(listedoc[i])
-                #pour mettre l'index et la valeur du plus grand tf-idf
-            if tfidf[index_mot][i] > max_score:
-                max_score = tfidf[index_mot][i]
-                max_index = i
-    #mettre le président qui a le plus répété le mot
-    president_final = listedoc[i]
-
-    return presidents, president_final
+prsdt = []
+compteur = []
+for fichier in range (len(M)) :
+    compt = 0
+    verif = True
+    for ligne in M[fichier] :
+        if "nation" in ligne :
+            compt += 1
+            if verif == True :
+                prsdt.append(fichier)
+                verif = False
+    compteur.append(compt)
+min = 0
+for nbr in range(len(compteur)) :
+    if compteur[nbr] > min :
+        max = compteur[nbr]
 
 
-tfidf = TFIDF("./cleaned")
-listemots = ""
-listedoc = ""
-print(findpresident(tfidf, listemots, listedoc))
-# à mettre dans main
-# lespresidents,president_most_repeat = findpresident(tfidf,listemots,listedoc)
+
+L = noms()
+nom = []
+print("Les présidents ayant prononcé le mot nation sont : ", end = "")
+for i in prsdt :
+    if L[i] not in nom :
+        nom.append(L[i])
+for i in nom :
+    print(i, end = " ")
+print("")
+print("Celui l'ayant le plus prononcé est : ", L[max])
