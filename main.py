@@ -20,6 +20,7 @@ if __name__ == '__main__':
 
     if choix == 1 :
         from TFIDFlow import *
+        print("Les mots les moins importants (ayant le score TF-IDF le plus bas) sont : ", TFIDFLOW())
     if choix == 2 :
         from tfidfelevé import *
     if choix == 3 :

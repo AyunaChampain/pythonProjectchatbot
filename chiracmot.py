@@ -1,8 +1,10 @@
 from Functions import *
+from TFIDFlow import *
 tf = tf("./cleaned")
 
 clemax = 0
-motmax = ''
+motmax = []
+non_imp = TFIDFLOW()
 #parcours les dictionnaires dans la liste
 for a in range (len(tf)):
     #parcours seulement les dictionnaires liés au président Chirac
@@ -10,11 +12,11 @@ for a in range (len(tf)):
         #parcours les mots de chaque dossiers
         for cle in tf[a].keys():
             #trouve le mot ayant été dit le plus de fois
-            if tf[a][cle] > clemax:
+            if tf[a][cle] > clemax and cle not in non_imp and len(cle) > 1 :
                 clemax = tf[a][cle]
-                motmax = cle
+                motmax.append(cle)
 
-print('Le mot ayant été le plus répété par le président Chirac est :',motmax)
+print('Les mots ayant été le plus répétés par le président Chirac sont :',motmax)
 
 
 
