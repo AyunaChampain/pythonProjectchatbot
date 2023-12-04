@@ -10,9 +10,8 @@ for i in range(len(TfIdf)) :
     #Calcule la moyenne des scores TfIdf de chaque mot
     for j in range(1,len(TfIdf[i])) :
         s += TfIdf[i][j]
-    s /= len(TfIdf[i])
     #Garde les mots dont le score est inférieur à 0.38
-    if s <= 0.38 :
+    if s == 0 :
         mot.append(TfIdf[i][0])
 
 

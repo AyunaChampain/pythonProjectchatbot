@@ -128,6 +128,7 @@ def IDF (repert) :
     dico = {}
     M = []
     list = list_of_files(repert, "txt")
+    TF = tf("./cleaned")
     for i in range (len(list)) :
         L = []
         with open("./cleaned/" + list[i], "r") as f :
@@ -141,13 +142,14 @@ def IDF (repert) :
                 M.append(L)
     dico = {}
     for i in M :
+        cpt = 0
         for mot in i :
-            if mot not in dico.keys() :
-                dico[mot] = 1
-            else :
-                dico[mot] = dico[mot] + 1
+            for j in TF :
+                if mot in j.keys() :
+                    cpt += 1
+        dico[mot] = cpt
     for i in dico.keys() :
-        dico[i] = log10(1 + (len(list)/dico[i]))
+        dico[i] = log10(len(list)/dico[i])
     return dico
 
 
@@ -166,4 +168,3 @@ def TFIDF (reper) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
     return M
-
