@@ -177,3 +177,14 @@ def liste_mots() :
     for i in range (len(tfidf)) :
         L.append(tfidf[i][0])
     return L
+
+def inverse_matr(M) :
+    M2 = []
+    for j in range (1, len(M[0])) : #colonnes
+        L = []
+        for i in M : #parcours les lignes
+            L.append(i[j])
+        M2.append(L)
+    print(M2)
+
+inverse_matr(TFIDF("./cleaned"))
