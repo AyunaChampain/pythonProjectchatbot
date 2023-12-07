@@ -167,4 +167,13 @@ def TFIDF (reper) :
         for i in range(len(M)) :
             if M[i][0] in TF[j].keys() :
                 M[i].append(TF[j][M[i][0]] * idf[M[i][0]])
+            else :
+                M[i].append(0)
     return M
+
+def liste_mots() :
+    L = []
+    tfidf = TFIDF("./cleaned")
+    for i in range (len(tfidf)) :
+        L.append(tfidf[i][0])
+    return L

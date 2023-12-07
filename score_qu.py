@@ -1,9 +1,8 @@
 from Functions import *
 
-def score_qu(quest) :
+def tf_qu(quest) :
     tf_qu = []
     tfidf = TFIDF("./cleaned")
-    print(tfidf)
     for i in range(len(tfidf)) :
         tf_qu.append([tfidf[i][0], 0])
         for j in quest :
@@ -12,3 +11,5 @@ def score_qu(quest) :
     for i in range(len(tf_qu)) :
         tf_qu[i][1] /= len(quest)
     return tf_qu
+
+print(TFIDF("./cleaned"))
