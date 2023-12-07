@@ -9,4 +9,6 @@ def score_qu(quest) :
         for j in quest :
             if tfidf[i][0] == j :
                 tf_qu[i][1] += 1
+    for i in range(len(tf_qu)) :
+        tf_qu[i][1] /= len(quest)
     return tf_qu
