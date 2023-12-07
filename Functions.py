@@ -185,7 +185,6 @@ def inverse_matr(M) :
         for i in M : #parcours les lignes
             L.append(i[j])
         M2.append(L)
-    print(M2)
+    return M2
 
 
-inverse_matr(TFIDF("./cleaned"))
