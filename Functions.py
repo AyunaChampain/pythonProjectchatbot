@@ -187,4 +187,5 @@ def inverse_matr(M) :
         M2.append(L)
     print(M2)
 
+
 inverse_matr(TFIDF("./cleaned"))
