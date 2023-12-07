@@ -189,12 +189,20 @@ def inverse_matr(M) :
 
 
 def norme(A) :
+    s = 0
     for i in range(len(A)) :
         s += A[i]**2
     s = sqrt(s)
     return s
 
+def prod_scal(A, B):
+    sommeAB = 1
+    for i in range(len(A)):  #//len(M)
+        sommeAB += A[i]*B[i]  #pck B c'est une ligne nan?
+    return sommeAB
+
+
 def sim(A, B) :
-    sc = prdt_sc(A, B)
+    sc = prod_scal(A, B)
     sc /= (norme(A) * norme(B))
     return sc
