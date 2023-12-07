@@ -188,3 +188,13 @@ def inverse_matr(M) :
     return M2
 
 
+def norme(A) :
+    for i in range(len(A)) :
+        s += A[i]**2
+    s = sqrt(s)
+    return s
+
+def sim(A, B) :
+    sc = prdt_sc(A, B)
+    sc /= (norme(A) * norme(B))
+    return sc
