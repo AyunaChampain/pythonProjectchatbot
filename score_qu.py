@@ -1,0 +1,12 @@
+from Functions import *
+
+def score_qu(quest) :
+    tf_qu = []
+    tfidf = TFIDF("./cleaned")
+    print(tfidf)
+    for i in range(len(tfidf)) :
+        tf_qu.append([tfidf[i][0], 0])
+        for j in quest :
+            if tfidf[i][0] == j :
+                tf_qu[i][1] += 1
+    return tf_qu
