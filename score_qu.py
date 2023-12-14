@@ -1,6 +1,6 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
-
+# Matrice du TF et de l'IDF de la question
 from Functions import *
 from motsquestion import *
 

@@ -1,6 +1,6 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
-
+# Ressort le fichier le plus pertinent
 from score_qu import *
 from Functions import *
 from motsquestion import *
