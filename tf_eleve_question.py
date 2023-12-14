@@ -10,3 +10,4 @@ def tfidf_question():
             eleve = tf_question[i]
             place = i
     mot_question = listedesmots[place]
+    return mot_question
