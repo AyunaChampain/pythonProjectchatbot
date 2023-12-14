@@ -1,16 +1,22 @@
 def mots_question(question):
     listedesmots=[]
     mots = question.split()
-    for i in range (len(question)):
-        for cara in question:
-            if (ord(cara) >= 33 and ord(cara) <= 38) or (ord(cara) >= 40 and ord(cara) <= 44) or (ord(cara) >= 46 and ord(cara) <= 47) or (ord(cara) >= 58 and ord(cara) <= 63) or (ord(cara) >= 91 and ord(cara) <= 96) or (ord(cara) >= 123 and ord(cara) <= 126):
-                cara= " "
-            elif (ord(cara) == 39) or (ord(cara) == 45):
-                cara = " "
-            print(question)
+    mot=''
+    for cara in question:
+        if ord('A') <= ord(cara) <= ord('Z'):
+            mot += chr(ord(cara) + 32)
+        elif 31 >= ord(cara) >= 0 or 33 <= ord(cara) <= 45 or 47 <= ord(cara) <= 64 or 91>= ord(cara) >= 96 or 127 >= ord(cara)>= 123:
+            mot += ''
+        elif ord(cara) == 32 or ord(cara) == 46:
+            mot += ' '
+        else:
+            mot += chr(ord(cara))
+        mots = mot.split()
     if mots not in listedesmots and mots != " " and mots != "":
         listedesmots.append(mots)
     return listedesmots
-laquest="je suis dans/ le salon."
+
+
+laquest="Je suis dans/ le salon.Vive la République !- Vive la France !"
 a = mots_question(laquest)
 print(a)
