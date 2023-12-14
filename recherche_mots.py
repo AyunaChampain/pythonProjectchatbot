@@ -1,3 +1,6 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
+
 #read fichier faire liste des mots
 #en sortir une liste des mots
 mots_question = ["est", "ce", "que", "nn"]
