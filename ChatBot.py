@@ -12,5 +12,5 @@ tfidf = inverse_matr(TFIDF("./cleaned"))
 TFIDF_qu = Tfidf(question)
 files = list_of_files("./cleaned", 'txt')
 doc = pertin(tfidf, TFIDF_qu, files)
-mot = "nation"
+mot = "MESSIEURS"
 print(repreturn(doc, mot))

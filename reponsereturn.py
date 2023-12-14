@@ -2,14 +2,16 @@
 # Projet Python : My First ChatBot
 # Fonction qui retourne la phrase contenant la première occurence du mot au TF-IDF le plus élevé dans le bon document
 def repreturn(docpertinent,motquestioneleve):
-    print(docpertinent)
-    with open("docfichier","w") as docpertinent:
-        docpertinent = docpertinent.replace("-",".")
-        docpertinent = docpertinent.replace("!",".")
-        docpertinent = docpertinent.replace("?",".")
-        a = docpertinent.split(".")
+    a = []
+    with open("./speeches/" + docpertinent,"r") as docpertinent:
+        lignes = docpertinent.readlines()
+        for i in lignes :
+            ligne = i.replace("-",".")
+            ligne = i.replace("!",".")
+            ligne = i.replace("?",".")
+            a.append(ligne.split("."))
         cpt = 0
         for sentence in a:
-            if motQuestionEleve in a and cpt == 0:
-                cpt = 1
-                return a
+            phrase = sentence[0].split(" ")
+            if motquestioneleve in phrase :
+                return sentence
