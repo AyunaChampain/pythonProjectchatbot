@@ -1,3 +1,6 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
+
 from Functions import *
 
 #obtenir le score TD-IDF le plus élevé pour chaque document.
