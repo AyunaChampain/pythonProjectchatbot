@@ -1,3 +1,5 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
 def mots_question(question):
     listedesmots=[]
     mots = question.split()
