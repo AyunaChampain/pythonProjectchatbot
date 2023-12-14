@@ -1,3 +1,6 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
+# Fonction
 from score_qu import *
 from motsquestion import *
 tf_question = tf_qu(quest)
