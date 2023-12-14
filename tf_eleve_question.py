@@ -1,10 +1,12 @@
-#Dans le vecteur TF-IDF de la question,
-# repérer le mot ayant le score TF-IDF le plus élevé et le retourner.
 from score_qu import *
-tf_question = tf_qu
+from motsquestion import *
+tf_question = tf_qu(quest)
 def tfidf_question():
     eleve = 0
-    for i in tf_question:
-        if i >= eleve:
-            eleve = i
-    tf_qestion[eleve]
+    place = 0
+    mot_question = " "
+    for i in len(tf_question):
+        if tf_question[i] >= eleve:
+            eleve = tf_question[i]
+            place = i
+    mot_question = listedesmots[place]
