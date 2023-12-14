@@ -12,8 +12,9 @@ def mots_question(question):
         else:
             mot += chr(ord(cara))
         mots = mot.split()
-    if mots not in listedesmots and mots != " " and mots != "":
-        listedesmots.append(mots)
+    for mo in mots:
+        if mo not in listedesmots and mo != " " and mo != "":
+            listedesmots.append(mo)
     return listedesmots
 
 
