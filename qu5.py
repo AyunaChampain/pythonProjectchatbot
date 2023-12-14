@@ -12,12 +12,11 @@ def pertin(tfidf, TFIDF_qu, files) :
         if a >= max :
             max = a
             nom = files[i]
-    print(max)
-    print(nom)
+    return nom
 
 
 tfidf = inverse_matr(TFIDF("./cleaned"))
-question = str(input("Question : "))
-TFIDF_qu = Tfidf([mots_question(question)])
+question = str(input("Question :"))
+TFIDF_qu = Tfidf(mots_question(question))
 files = list_of_files("./cleaned", 'txt')
 pertin(tfidf, TFIDF_qu, files)
