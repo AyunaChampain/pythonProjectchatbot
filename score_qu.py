@@ -2,6 +2,7 @@
 # Projet Python : My First ChatBot
 
 from Functions import *
+from motsquestion import *
 
 def tf_qu(quest) :
     tf_qu = []
@@ -9,10 +10,13 @@ def tf_qu(quest) :
     for i in range(len(tfidf)) :
         tf_qu.append([tfidf[i][0], 0])
         for j in quest :
+            print(j)
             if tfidf[i][0] == j :
                 tf_qu[i][1] += 1
+                print("ok")
     for i in range(len(tf_qu)) :
         tf_qu[i][1] /= len(quest)
+    print(tf_qu)
     return tf_qu
 
 def Tfidf(quest) :
@@ -22,3 +26,6 @@ def Tfidf(quest) :
         for j in M[i] :
             j *= TF[i][1]
     return M
+
+question = input()
+Tfidf(mots_question(question))
