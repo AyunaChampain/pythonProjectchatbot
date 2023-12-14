@@ -16,8 +16,3 @@ def mots_question(question):
         if mo not in listedesmots and mo != " " and mo != "":
             listedesmots.append(mo)
     return listedesmots
-
-
-laquest="Je suis dans/ le salon.Vive la République !- Vive la France !"
-a = mots_question(laquest)
-print(a)
