@@ -1,6 +1,6 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
-
+# Retourne une liste des mots de la question en enlevant les ponctuations et majuscules
 def mots_question(question):
     listedesmots=[]
     mots = question.split()
