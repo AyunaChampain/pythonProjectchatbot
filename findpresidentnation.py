@@ -1,5 +1,7 @@
-from Functions import *
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
 
+from Functions import *
 
 M = []
 repert = "./cleaned"
