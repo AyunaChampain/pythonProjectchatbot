@@ -1,5 +1,6 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
+# Fonction qui retourne le mot avec le TF-IDF le plus élevé dans la question
 from score_qu import *
 from motsquestion import *
 listedesmots = mots_question(question)
