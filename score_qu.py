@@ -17,7 +17,6 @@ def tf_qu(quest) :
 
 def Tfidf(quest) :
     TF = tf_qu(quest)
-    print(TF)
     M = inverse_matr(TFIDF("./cleaned"))
     for i in range (len(M)) :
         for j in M[i] :
