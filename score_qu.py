@@ -14,7 +14,6 @@ def tf_qu(quest) :
                 tf_qu[i][1] += 1
     for i in range(len(tf_qu)) :
         tf_qu[i][1] /= len(quest)
-    print(tf_qu)
     return tf_qu
 
 def Tfidf(quest) :
