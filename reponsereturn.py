@@ -8,7 +8,7 @@ def repreturn(docpertinent,motquestioneleve):
     a = docpertinent.split(".")
     cpt = 0
     for sentence in a:
-        if motQuestionEleve in a and cpt == 0:
+        if motquestioneleve in a and cpt == 0:
             cpt = 1
             return a
 
