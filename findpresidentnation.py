@@ -1,6 +1,7 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
-
+# Fonction qui ressort la liste des président ayant mentionné "nation"
+# Ressort le nom de celui l'ayant le plus mentionné
 from Functions import *
 
 
