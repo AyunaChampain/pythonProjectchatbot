@@ -1,3 +1,6 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
+
 from math import *
 from os import listdir
 

@@ -1,7 +1,14 @@
+# Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
+# Projet Python : My First ChatBot
+
+# Le programme contenu dans ce fichier permet de chercher les mots
+# les plus répétés par le président Chirac lors de ses discours
+
 from Functions import *
 from TFIDFlow import *
-tf = tf("./cleaned")
 
+
+tf = tf("./cleaned")
 clemax = 0
 motmax = []
 non_imp = TFIDFLOW()
