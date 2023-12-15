@@ -1,6 +1,8 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
 # Fonction qui retourne la phrase contenant la première occurence du mot au TF-IDF le plus élevé dans le bon document
+from Functions import *
+
 def repreturn(docpertinent,motquestioneleve):
     a = []
     with open("./speeches/" + docpertinent,"r") as docpertinent:
@@ -15,3 +17,5 @@ def repreturn(docpertinent,motquestioneleve):
             phrase = sentence[0].split(" ")
             if motquestioneleve in phrase :
                 return sentence
+
+repreturn("Nomination_Chirac1.txt", "nation")
