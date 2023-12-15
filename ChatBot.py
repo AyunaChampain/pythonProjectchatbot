@@ -5,6 +5,7 @@ from motsquestion import *
 from reponsereturn import *
 from qu5 import *
 from tf_eleve_question import *
+from affiner_rep import *
 
 question = str(input("Bonjour cher utilisateur ! Je suis J.O.C., ChatBot à votre service, comment puis-je vous aider ? "))
 question = mots_question(question)
@@ -12,5 +13,8 @@ tfidf = inverse_matr(TFIDF("./cleaned"))
 TFIDF_qu = Tfidf(question)
 files = list_of_files("./cleaned", 'txt')
 doc = pertin(tfidf, TFIDF_qu, files)
-mot = "MESSIEURS"
-print(repreturn(doc, mot))
+mot = tfidf_question(question)
+rep = repreturn(doc, mot)
+print(rep)
+#écrire rep en phrase
+#affin_rep(question)

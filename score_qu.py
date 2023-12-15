@@ -20,7 +20,9 @@ def Tfidf(quest) :
     TF = tf_qu(quest)
     M = inverse_matr(TFIDF("./cleaned"))
     vecqu = []
+    for i in range (len(M[0])) :
+        vecqu.append("")
     for i in range (len(M)) :
         for j in range (len(M[i])) :
-            vecqu.append(TF[i][1] * M[i][j])
+            vecqu[j] = (TF[i][1] * M[i][j])
     return vecqu

@@ -1,6 +1,7 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
 # Regroupe les premières fonctions principales
+# coding: utf-8
 
 from math import *
 from os import listdir
@@ -175,7 +176,7 @@ def TFIDF (reper) :
                 M[i].append(0)
     return M
 
-def liste_mots() :
+def listetoutmots() :
     L = []
     tfidf = TFIDF("./cleaned")
     for i in range (len(tfidf)) :
@@ -208,7 +209,9 @@ def prod_scal(A, B):
 
 def sim(A, B) :
     sc = prod_scal(A, B)
-    sc /= (norme(A) * norme(B))
+    div = norme(A) * norme(B)
+    if div != 0 :
+        sc /= div
     return sc
 
 
@@ -248,6 +251,3 @@ def ponctuationpoint(reper):
                         new_line2 += cara2
             with open("./cleanedpoint/" + list[i], "w") as f4 :
                 f4.write(new_line2)
-
-minusculespoint("./speeches")
-ponctuationpoint("./cleanedpoint")

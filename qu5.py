@@ -8,7 +8,7 @@ from motsquestion import *
 def pertin(tfidf, TFIDF_qu, files) :
     max = 1
     for i in range (len(tfidf)) :
-        a = sim(tfidf[i], TFIDF_qu[i])
+        a = sim(tfidf[i], TFIDF_qu)
         if a >= max :
             max = a
             nom = files[i]

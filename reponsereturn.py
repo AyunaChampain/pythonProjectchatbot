@@ -5,7 +5,7 @@ from Functions import *
 
 def repreturn(docpertinent,motquestioneleve):
     a = []
-    with open("./speeches/" + docpertinent,"r") as docpertinent:
+    with open("./cleanedpoint/" + docpertinent,"r") as docpertinent:
         lignes = docpertinent.readlines()
         for i in lignes :
             ligne = i.replace("-",".")
@@ -17,5 +17,3 @@ def repreturn(docpertinent,motquestioneleve):
             phrase = sentence[0].split(" ")
             if motquestioneleve in phrase :
                 return sentence
-
-repreturn("Nomination_Chirac1.txt", "nation")
