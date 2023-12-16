@@ -16,12 +16,12 @@ def tf_qu(quest) :
 
 def Tfidf(quest) :
     TF = tf_qu(quest)
-    M = inverse_matr(TFIDF("./cleaned"))
+    M = IDF("./cleaned")
     vecqu = []
-    for i in range (len(M[0])) :
+    for i in range (len(M)) :
         vecqu.append("")
     for i in range (len(M)) :
-        for j in range (len(M[i])) :
-            if vecqu[j] == "" or vecqu[j] == 0.0 :
-                vecqu[j] = (TF[i][1] * M[i][j])
+        vecqu[i] = (TF[i][1] * M[TF[i][0]])
     return vecqu
+
+Tfidf(["nation"])

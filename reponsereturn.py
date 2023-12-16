@@ -17,3 +17,4 @@ def repreturn(docpertinent,motquestioneleve):
             phrase = sentence[0].split(" ")
             if motquestioneleve in phrase :
                 return sentence
+    return "Désolé, je n'ai pas la réponse à votre question."

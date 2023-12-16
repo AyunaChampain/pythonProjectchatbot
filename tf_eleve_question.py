@@ -13,5 +13,6 @@ def tfidf_question(quest):
     for i in range(len(tfidf_qu)):
         if tfidf_qu[i] >= eleve:
             eleve = tfidf_qu[i]
+            max = i
     liste = listetoutmots()
-    return liste[i]
+    return liste[max]

@@ -15,6 +15,4 @@ files = list_of_files("./cleaned", 'txt')
 doc = pertin(tfidf, TFIDF_qu, files)
 mot = tfidf_question(question)
 rep = repreturn(doc, mot)
-print(rep)
-#écrire rep en phrase
-#affin_rep(question)
+print(affin_rep(question, rep))
