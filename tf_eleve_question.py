@@ -8,7 +8,6 @@ from Functions import *
 
 def tfidf_question(quest):
     tfidf_qu = Tfidf(quest)
-    print(tf_qu)
     eleve = 0
     place = 0
     for i in range(len(tfidf_qu)):

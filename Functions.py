@@ -212,6 +212,8 @@ def sim(A, B) :
     div = norme(A) * norme(B)
     if div != 0 :
         sc /= div
+        return sc
+    sc = 0
     return sc
 
 def minusculespoint(repert) :

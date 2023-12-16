@@ -6,7 +6,7 @@ from Functions import *
 from motsquestion import *
 
 def pertin(tfidf, TFIDF_qu, files) :
-    max = 1
+    max = 0
     for i in range (len(tfidf)) :
         a = sim(tfidf[i], TFIDF_qu)
         if a >= max :

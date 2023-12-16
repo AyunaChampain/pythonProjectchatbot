@@ -22,5 +22,6 @@ def Tfidf(quest) :
         vecqu.append("")
     for i in range (len(M)) :
         for j in range (len(M[i])) :
-            vecqu[j] = (TF[i][1] * M[i][j])
+            if vecqu[j] == "" or vecqu[j] == 0.0 :
+                vecqu[j] = (TF[i][1] * M[i][j])
     return vecqu
