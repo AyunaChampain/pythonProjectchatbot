@@ -202,8 +202,9 @@ def norme(A) :
 
 def prod_scal(A, B):
     sommeAB = 1
-    for i in range(len(A)):  #//len(M)
-        sommeAB += A[i]*B[i]  #pck B c'est une ligne nan?
+    for i in range(len(A)):
+        sommeAB += A[i]*B[i]
+    print(sommeAB)
     return sommeAB
 
 
