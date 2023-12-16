@@ -204,7 +204,6 @@ def prod_scal(A, B):
     sommeAB = 1
     for i in range(len(A)):
         sommeAB += A[i]*B[i]
-    print(sommeAB)
     return sommeAB
 
 
@@ -214,8 +213,6 @@ def sim(A, B) :
     if div != 0 :
         sc /= div
     return sc
-
-
 
 def minusculespoint(repert) :
     list = list_of_files(repert, "txt")
