@@ -13,7 +13,7 @@ def affin_rep(quest, repbr) :
             if i == x :
                 rep = j
     for i in range(len(repbr[0])) :
-        if i == 0 :
+        if i == 0 and rep == "" :
             rep += chr(ord(repbr[0][i]) - 32)
         else :
             rep += repbr[0][i]

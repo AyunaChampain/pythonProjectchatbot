@@ -15,4 +15,7 @@ files = list_of_files("./cleaned", 'txt')
 doc = pertin(tfidf, TFIDF_qu, files)
 mot = tfidf_question(question)
 rep = repreturn(doc, mot)
-print(affin_rep(question, rep))
+if rep != "Désolé, je n'ai pas la réponse à votre question." :
+    print(affin_rep(question, rep))
+else :
+    print(rep)
