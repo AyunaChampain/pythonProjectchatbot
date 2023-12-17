@@ -3,7 +3,7 @@
 
 from motsquestion import *
 from reponsereturn import *
-from qu5 import *
+from docpertin import *
 from tf_eleve_question import *
 from affiner_rep import *
 
