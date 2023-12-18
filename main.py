@@ -10,13 +10,12 @@ if __name__ == '__main__':
     print("Que souhaitez vous faire ? (Tapez le chiffre correspondant) ")
     print("1 - Accéder au ChatBot.")
     print("2 - Accéder aux fonctionnalités secondaires.")
-    print("3 - Fermer le programme.")
     commande = 0
     while commande < 1 or commande > 2 :
         commande = int(input("Choisissez une commande : "))
         print("")
     if commande == 1 :
-        from Chatbot import *
+        from ChatBot import *
     if commande == 2 :
         print("Tapez :")
         print("1 pour obtenir la liste des mots les moins importants.")
