@@ -6,7 +6,7 @@ from TFIDFlow import *
 
 
 def tfidf_eleve(tfidf):
-    nonimp = TFIDFLOW()
+    nonimp = TFIDFLOW() #initialise une liste de mots non-importants
     #Initialisation du maximum à 0
     maxi_tfidf = 0
     #parcourir la ligne de la matrice
@@ -15,6 +15,7 @@ def tfidf_eleve(tfidf):
         for j in range(1, len(tfidf[i])):
             #Comparer le maximum à la valeur
             if tfidf[i][j] > maxi_tfidf and tfidf[i][0] not in nonimp and len(tfidf[i][0]) != 1 :
+                #Si la valeur est plus grande, le nouveau maximum est la valeur
                 maxi_tfidf = tfidf[i][j]
                 mot = tfidf[i][0]
     return mot

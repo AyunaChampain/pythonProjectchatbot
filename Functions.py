@@ -1,7 +1,7 @@
 # Champain Ayuna, Tea Julia, Teyssedre Orphée --- Groupe C
 # Projet Python : My First ChatBot
-# Regroupe les premières fonctions principales
-# coding: utf-8
+# Regroupe le premières fonctions nécessaires
+
 
 from math import *
 from os import listdir
@@ -176,6 +176,8 @@ def TFIDF (reper) :
                 M[i].append(0)
     return M
 
+
+#Créer une liste de tous les mots
 def listetoutmots() :
     L = []
     tfidf = TFIDF("./cleaned")
@@ -183,6 +185,8 @@ def listetoutmots() :
         L.append(tfidf[i][0])
     return L
 
+
+#Inverse une matrice
 def inverse_matr(M) :
     M2 = []
     for j in range (1, len(M[0])) : #colonnes
@@ -192,7 +196,7 @@ def inverse_matr(M) :
         M2.append(L)
     return M2
 
-
+#Calcule la norme d'un vecteur
 def norme(A) :
     s = 0
     for i in range(len(A)) :
@@ -200,13 +204,15 @@ def norme(A) :
     s = sqrt(s)
     return s
 
+
+#Calcule le produit scalaire des deux vecteurs
 def prod_scal(A, B):
     sommeAB = 1
     for i in range(len(A)):
         sommeAB += A[i]*B[i]
     return sommeAB
 
-
+#Calcule la similarité de deux vecteurs
 def sim(A, B) :
     sc = prod_scal(A, B)
     div = norme(A) * norme(B)
@@ -216,6 +222,8 @@ def sim(A, B) :
     sc = 0
     return sc
 
+
+#Créer des fichiers en minuscules
 def minusculespoint(repert) :
     list = list_of_files(repert, "txt")
     for i in range (len(list)) :

@@ -44,7 +44,7 @@ for nbr in range(len(compteur)) :
         max = compteur[nbr]
 
 
-
+#Ecrit la réponse de façon esthétique
 L = noms()
 nom = []
 print("Les présidents ayant prononcé le mot nation sont : ", end = "")

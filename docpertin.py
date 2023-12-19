@@ -8,8 +8,10 @@ from motsquestion import *
 def pertin(tfidf, TFIDF_qu, files) :
     max = 0
     for i in range (len(tfidf)) :
+        #Calcule la similarité entre le tfidf des mot et le tfidf de la question
         a = sim(tfidf[i], TFIDF_qu)
         if a >= max :
+            #On prend max = plus grand tfidf
             max = a
             nom = files[i]
     return nom

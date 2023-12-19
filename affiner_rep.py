@@ -4,14 +4,18 @@
 # Ajoute des points en fin de phrase
 
 def affin_rep(quest, repbr) :
+    #Permet d'associer des questions à des réponses par défaut
     question_starters = {"comment": "Après analyse, ", "pourquoi": "Car, ", "peux tu": "Oui, bien sûr!"}
     x = quest[0]
     rep = ""
     nv_mot = ""
+    #Initialise la réponse avec le bon début de réponse par rapport à la question
     if x in question_starters.keys() :
         for i, j in question_starters.items() :
             if i == x :
                 rep = j
+
+    #Ecrit une réponse avec une majuscule en début et un point à la fin
     for i in range(len(repbr[0])) :
         if i == 0 and rep == "" :
             rep += chr(ord(repbr[0][i]) - 32)
