@@ -19,7 +19,7 @@ if __name__ == '__main__':
     if commande == 2 :
         print("Tapez :")
         print("1 pour obtenir la liste des mots les moins importants.")
-        print("2 pour les mots dont le score TD-IDF les plus élevés.")
+        print("2 pour les mots dont le score TD-IDF est le plus élevés.")
         print("3 pour les mots les plus répétés par le président Chirac.")
         print("4 pour obtenir la liste des noms des présidents ayant parlé de Nation et celui qui a répété le plus de fois le mot Nation.")
         print("5 pour obtenir le nom du premier président à parler d'écologie.")
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
         if choix == 1 :
             from TFIDFlow import *
-            print("Les mots les moins importants (ayant le score TF-IDF le plus bas) sont : ", TFIDFLOW())
+            print("Les mots les moins importants sont : ", TFIDFLOW())
         if choix == 2 :
             from tfidfelevé import *
         if choix == 3 :

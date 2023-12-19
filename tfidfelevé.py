@@ -2,10 +2,11 @@
 # Projet Python : My First ChatBot
 #obtenir le score TD-IDF le plus élevé pour chaque document.
 from Functions import *
-
+from TFIDFlow import *
 
 
 def tfidf_eleve(tfidf):
+    nonimp = TFIDFLOW()
     #Initialisation du maximum à 0
     maxi_tfidf = 0
     #parcourir la ligne de la matrice
@@ -13,7 +14,7 @@ def tfidf_eleve(tfidf):
         #parcourir colone de la matrice
         for j in range(1, len(tfidf[i])):
             #Comparer le maximum à la valeur
-            if tfidf[i][j] > maxi_tfidf:
+            if tfidf[i][j] > maxi_tfidf and tfidf[i][0] not in nonimp and len(tfidf[i][0]) != 1 :
                 maxi_tfidf = tfidf[i][j]
                 mot = tfidf[i][0]
     return mot
